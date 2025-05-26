@@ -1,0 +1,487 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+
+/* Element selector */
+p {
+  color: red;
+}
+
+/* ID selector */
+#unique {
+  color: blue;
+}
+
+/* Class selector */
+.intro {
+  font-size: 20px;
+}
+
+/* Universal selector */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Grouping selectors */
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+
+
+/* External CSS */
+<link rel="stylesheet" href="styles.css">
+
+/* Internal CSS */
+<style>
+  body {
+    background-color: linen;
+  }
+</style>
+
+/* Inline CSS */
+<h1 style="color:blue;">A Blue Heading</h1>
+
+
+/* This is a single-line comment */
+
+/*
+This is a
+multi-line comment
+*/
+
+
+h1 {
+  color: blue;
+}
+
+p {
+  color: rgb(255, 0, 0);
+}
+
+div {
+  color: #00FF00;
+}
+
+span {
+  color: hsl(120, 100%, 50%);
+}
+
+
+body {
+  background-color: lightblue;
+}
+
+div {
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  background: #ffffff url("img_tree.png") no-repeat right top;
+}
+
+
+p {
+  border: 1px solid black;
+  border-width: 5px;
+  border-color: red green blue yellow;
+  border-style: dotted solid double dashed;
+  border-radius: 10px;
+}
+
+
+div {
+  margin-top: 100px;
+  margin-right: 50px;
+  margin-bottom: 100px;
+  margin-left: 50px;
+  margin: 25px 50px 75px 100px;
+}
+
+
+div {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding: 25px 50px 75px 100px;
+}
+
+
+div {
+  height: 200px;
+  width: 50%;
+  max-width: 500px;
+}
+
+
+div {
+  width: 300px;
+  padding: 25px;
+  border: 25px solid navy;
+  margin: 25px;
+}
+
+
+p {
+  outline-color: red;
+  outline-style: dotted;
+  outline-width: thick;
+  outline: thick dotted red;
+  outline-offset: 10px;
+}
+
+
+h1 {
+  color: navy;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+
+p {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<i class="fas fa-cloud"></i>
+
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: yellow;
+}
+
+
+ul.a {
+  list-style-type: circle;
+}
+
+ul.b {
+  list-style-type: square;
+}
+
+ol.c {
+  list-style-type: upper-roman;
+}
+
+ol.d {
+  list-style-type: lower-alpha;
+}
+
+ul {
+  list-style-image: url('sqpurple.gif');
+  list-style-position: inside;
+  list-style: square inside url("sqpurple.gif");
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+span {
+  display: block;
+}
+
+div {
+  display: inline;
+}
+
+
+div.static {
+  position: static;
+}
+
+div.relative {
+  position: relative;
+  left: 30px;
+}
+
+div.absolute {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+
+div {
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+img {
+  float: right;
+}
+
+div {
+  float: left;
+}
+
+
+/* Descendant selector */
+div p {
+  background-color: yellow;
+}
+
+/* Child selector */
+div > p {
+  background-color: red;
+}
+
+/* Adjacent sibling selector */
+div + p {
+  background-color: green;
+}
+
+/* General sibling selector */
+div ~ p {
+  background-color: blue;
+}
+
+
+a:hover {
+  color: red;
+}
+
+li:first-child {
+  color: blue;
+}
+
+p:nth-child(even) {
+  background-color: yellow;
+}
+
+
+p::first-line {
+  color: blue;
+  font-variant: small-caps;
+}
+
+p::first-letter {
+  color: red;
+  font-size: xx-large;
+}
+
+p::before {
+  content: "Note: ";
+  color: red;
+}
+
+
+div {
+  opacity: 0.5;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.icon {
+  background-image: url('img_navsprites.gif');
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 46px;
+  height: 44px;
+}
+
+.home {
+  background-position: 0 0;
+}
+
+.next {
+  background-position: -91px 0;
+}
+
+
+a[target] {
+  background-color: yellow;
+}
+
+a[target="_blank"] {
+  background-color: lightgreen;
+}
+
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+
+[class^="top"] {
+  background: yellow;
+}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+body {
+  counter-reset: section;
+}
+
+h1::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+
+
+/* Header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navigation */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Columns */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+

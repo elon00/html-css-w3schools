@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!-- 
+  File: advanced_css_examples.html
+  W3Schools Style: Advanced CSS Concepts
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 15px;
+            line-height: 1.6;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto; /* For horizontal scrolling if code is too wide */
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        /* --- 1. CSS Variables (Custom Properties) --- */
+        :root {
+            --main-bg-color: #f0f8ff; /* AliceBlue */
+            --main-text-color: #333;
+            --primary-color: #007bff; /* Blue */
+            --secondary-color: #6c757d; /* Gray */
+            --padding-small: 8px;
+            --padding-medium: 16px;
+            --border-radius: 5px;
+        }
+        .variables-example {
+            background-color: var(--main-bg-color);
+            color: var(--main-text-color);
+            padding: var(--padding-medium);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+        }
+        .variables-example button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--padding-small) var(--padding-medium);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+        .variables-example button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* --- 2. Flexbox --- */
+        .flex-container {
+            display: flex; /* Enables flexbox */
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            background-color: #dodgerblue;
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+        .flex-item {
+            background-color: #f1f1f1;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px; /* For vertical centering of text */
+            font-size: 20px;
+            border-radius: 3px;
+        }
+        /* Specific flex item properties */
+        .flex-item-grow { flex-grow: 1; } /* This item will take up available space */
+        .flex-item-shrink { flex-shrink: 0; width: 150px; background-color: lightgreen; } /* Won't shrink below its width */
+        .flex-item-basis { flex-basis: 200px; background-color: lightpink; } /* Initial main size */
+        .flex-container-align {
+            display: flex;
+            height: 200px; /* Container needs height for align-items */
+            background-color: #4CAF50;
+            align-items: center; /* Aligns items vertically */
+            justify-content: space-around; /* Distributes items horizontally */
+        }
+
+
+        /* --- 3. CSS Grid --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto; /* 3 columns of equal width */
+            /* grid-template-rows: 80px 150px; */ /* Example for row sizing */
+            gap: 10px; /* Space between grid items */
+            background-color: #2196F3;
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 3px;
+        }
+        /* Spanning items */
+        .grid-item-span-col { grid-column: 1 / span 2; background-color: gold;} /* Spans 2 columns */
+        .grid-item-span-row { grid-row: 2 / span 2; background-color: lightsalmon;} /* Spans 2 rows */
+        .grid-named-areas {
+            display: grid;
+            grid-template-areas:
+                'header header header'
+                'menu main right'
+                'footer footer footer';
+            gap: 10px;
+            background-color: #ff7f50; /* Coral */
+            padding: 10px;
+        }
+        .item-header { grid-area: header; background-color: #a52a2a; } /* Brown */
+        .item-menu   { grid-area: menu; background-color: #deb887; } /* BurlyWood */
+        .item-main   { grid-area: main; background-color: #d2b48c; } /* Tan */
+        .item-right  { grid-area: right; background-color: #f5deb3; } /* Wheat */
+        .item-footer { grid-area: footer; background-color: #8b4513; } /* SaddleBrown */
+
+
+        /* --- 4. CSS Transitions --- */
+        .transition-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition-property: width, background-color, transform; /* Properties to transition */
+            transition-duration: 2s, 1s, 0.5s; /* Duration for each property */
+            transition-timing-function: ease-in-out; /* Speed curve */
+            /* Shorthand: transition: width 2s, background-color 1s, transform 0.5s ease-in-out; */
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .transition-box:hover {
+            width: 200px;
+            background-color: blue;
+            transform: rotate(45deg);
+        }
+
+        /* --- 5. CSS Animations (@keyframes) --- */
+        .animation-box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: relative; /* Needed for 'top' and 'left' animation */
+            animation-name: exampleAnimation;
+            animation-duration: 4s;
+            animation-iteration-count: infinite; /* Loop indefinitely */
+            animation-direction: alternate; /* Play forwards then backwards */
+            animation-timing-function: ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 10px;
+        }
+        @keyframes exampleAnimation {
+            0%   {background-color:green; left:0px; top:0px; transform: scale(1) rotate(0deg);}
+            25%  {background-color:yellow; left:200px; top:0px; transform: scale(1.2) rotate(90deg); color: black;}
+            50%  {background-color:blue; left:200px; top:100px; transform: scale(1) rotate(180deg); color: white;}
+            75%  {background-color:orange; left:0px; top:100px; transform: scale(1.2) rotate(270deg); color: black;}
+            100% {background-color:green; left:0px; top:0px; transform: scale(1) rotate(360deg); color: white;}
+        }
+
+        /* --- 6. Responsive Design (Media Queries) --- */
+        .responsive-box {
+            width: 80%;
+            height: 150px;
+            background-color: purple;
+            color: white;
+            padding: var(--padding-medium);
+            text-align: center;
+            margin: 10px auto;
+            border-radius: var(--border-radius);
+        }
+        /* For small screens (e.g., mobile phones) */
+        @media screen and (max-width: 600px) {
+            .responsive-box {
+                background-color: lightseagreen;
+                font-size: 14px;
+                width: 95%;
+            }
+            .flex-container {
+                flex-direction: column; /* Stack flex items vertically */
+            }
+            .grid-container {
+                grid-template-columns: auto; /* Single column */
+            }
+        }
+        /* For medium screens (e.g., tablets) */
+        @media screen and (min-width: 601px) and (max-width: 992px) {
+            .responsive-box {
+                background-color: slateblue;
+                width: 70%;
+            }
+        }
+
+        /* --- 7. Pseudo-elements & Pseudo-classes --- */
+        .pseudo-example p::first-line {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .pseudo-example p::before {
+            content: "Note: ";
+            color: red;
+            font-style: italic;
+        }
+        .pseudo-example a:link { color: green; }
+        .pseudo-example a:visited { color: purple; }
+        .pseudo-example a:hover { color: hotpink; text-decoration: underline; }
+        .pseudo-example a:active { color: orange; }
+        .pseudo-example input[type="text"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0,123,255,.5);
+        }
+        .pseudo-example li:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+        .pseudo-example li:nth-child(even) {
+            background-color: #e6e6e6;
+        }
+
+        /* --- 8. CSS Transforms (2D/3D) --- */
+        .transform-box-2d {
+            width: 150px;
+            height: 150px;
+            background-color: #ffc107; /* Amber */
+            margin: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease-in-out;
+        }
+        .transform-box-2d:hover {
+            transform: translate(20px, 10px) rotate(20deg) scale(1.2) skewX(10deg);
+        }
+
+        .transform-box-3d-container { /* For perspective */
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            perspective: 500px; /* Important for 3D effect */
+        }
+        .transform-box-3d {
+            width: 100%;
+            height: 100%;
+            background-color: #00bcd4; /* Cyan */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 1s;
+            transform-style: preserve-3d; /* Allows children to be in 3D space */
+        }
+        .transform-box-3d:hover {
+            transform: rotateY(60deg) rotateX(20deg);
+        }
+        .transform-box-3d-inner { /* Example of an inner element in 3D */
+            width: 80px;
+            height: 80px;
+            background-color: rgba(0,0,0,0.3);
+            transform: translateZ(40px); /* Moves this element forward in Z-axis */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Advanced CSS Examples (W3Schools Style)</h1>
+
+    <div class="container">
+        <h2>1. CSS Variables (Custom Properties)</h2>
+        <div class="variables-example">
+            <p>This box uses CSS variables for styling.</p>
+            <button>Click Me</button>
+        </div>
+        <pre>
+:root {
+  --main-bg-color: #f0f8ff;
+  --primary-color: #007bff;
+}
+.variables-example {
+  background-color: var(--main-bg-color);
+  border: 2px solid var(--primary-color);
+}</pre>
+    </div>
+
+    <div class="container">
+        <h2>2. Flexbox Layout</h2>
+        <h3>Basic Flex Container</h3>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">4</div>
+        </div>
+        <h3>Flex Item Properties (Grow, Shrink, Basis)</h3>
+        <div class="flex-container">
+            <div class="flex-item flex-item-grow">Grow (1)</div>
+            <div class="flex-item">Normal</div>
+            <div class="flex-item flex-item-shrink">Shrink (0)</div>
+            <div class="flex-item flex-item-basis">Basis (200px)</div>
+        </div>
+        <h3>Flex Alignment (align-items, justify-content)</h3>
+        <div class="flex-container-align">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+        </div>
+        <pre>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-item-grow { flex-grow: 1; }
+.flex-container-align {
+  align-items: center;
+  justify-content: space-around;
+}</pre>
+    </div>
+
+    <div class="container">
+        <h2>3. CSS Grid Layout</h2>
+        <h3>Basic Grid</h3>
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+        <h3>Grid Items Spanning Columns/Rows</h3>
+        <div class="grid-container">
+            <div class="grid-item grid-item-span-col">Span 2 Cols</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item grid-item-span-row">Span 2 Rows</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+        </div>
+        <h3>Grid Named Areas</h3>
+        <div class="grid-named-areas">
+            <div class="grid-item item-header">Header</div>
+            <div class="grid-item item-menu">Menu</div>
+            <div class="grid-item item-main">Main</div>
+            <div class="grid-item item-right">Right</div>
+            <div class="grid-item item-footer">Footer</div>
+        </div>
+        <pre>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+.grid-item-span-col { grid-column: 1 / span 2; }
+.grid-named-areas {
+  grid-template-areas:
+    'header header header'
+    'menu main right'
+    'footer footer footer';
+}
+.item-header { grid-area: header; }</pre>
+    </div>
+
+    <div class="container">
+        <h2>4. CSS Transitions</h2>
+        <div class="transition-box">Hover Me!</div>
+        <pre>
+.transition-box {
+  transition: width 2s, background-color 1s, transform 0.5s;
+}
+.transition-box:hover {
+  width: 200px;
+  background-color: blue;
+  transform: rotate(45deg);
+}</pre>
+    </div>
+
+    <div class="container">
+        <h2>5. CSS Animations (@keyframes)</h2>
+        <div class="animation-box">Animating!</div>
+        <pre>
+.animation-box {
+  animation-name: exampleAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes exampleAnimation {
+  0%   {background-color:green; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  /* ... more steps ... */
+  100% {background-color:green; left:0px; top:0px;}
+}</pre>
+    </div>
+
+    <div class="container">
+        <h2>6. Responsive Design (Media Queries)</h2>
+        <p>Resize your browser window to see the changes.</p>
+        <div class="responsive-box">I am responsive!</div>
+        <pre>
+.responsive-box { width: 80%; background-color: purple; }
+
+@media screen and (max-width: 600px) {
+  .responsive-box {
+    background-color: lightseagreen;
+    width: 95%;
+  }
+}</pre>
+    </div>
+
+    <div class="container">
+        <h2>7. Pseudo-elements & Pseudo-classes</h2>
+        <div class="pseudo-example">
+            <p>This is a paragraph. The first line will be styled. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#">Sample Link</a>
+            <br><br>
+            <input type="text" placeholder="Focus on me">
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+                <li>List Item 4</li>
+            </ul>
+        </div>
+        <pre>
+p::first-line { color: blue; }
+p::before { content: "Note: "; }
+a:hover { color: hotpink; }
+input:focus { border-color: blue; }
+li:nth-child(odd) { background-color: #f0f0f0; }</pre>
+    </div>
+
+    <div class="container">
+        <h2>8. CSS Transforms (2D & 3D)</h2>
+        <h3>2D Transforms</h3>
+        <div class="transform-box-2d">Hover for 2D Transform</div>
+        <h3>3D Transforms</h3>
+        <div class="transform-box-3d-container">
+            <div class="transform-box-3d">
+                Hover for 3D Transform
+                <div class="transform-box-3d-inner">Inner</div>
+            </div>
+        </div>
+        <pre>
+.transform-box-2d:hover {
+  transform: translate(20px, 10px) rotate(20deg) scale(1.2);
+}
+.transform-box-3d-container { perspective: 500px; }
+.transform-box-3d:hover {
+  transform: rotateY(60deg) rotateX(20deg);
+}</pre>
+    </div>
+
+</body>
+</html>

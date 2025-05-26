@@ -1,0 +1,242 @@
+div {
+  color: red;
+  background-color: yellow;
+  opacity: 0.7;
+}
+
+
+body {
+  background-color: #f3f3f3;
+  background-image: url("img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+div {
+  border: 2px solid black;
+  border-radius: 10px;
+  border-width: thick;
+  border-style: dotted dashed solid double;
+  border-color: red green blue yellow;
+}
+
+
+div {
+  margin: 10px;
+  margin: 10px 20px;
+  margin: 10px 20px 30px 40px;
+}
+
+
+div {
+  padding: 10px;
+  padding: 10px 20px;
+  padding: 10px 20px 30px 40px;
+}
+
+
+div {
+  width: 100px;
+  height: 200px;
+  max-width: 300px;
+  min-height: 150px;
+}
+
+
+p {
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  line-height: 1.5;
+}
+
+
+div {
+  display: block;
+}
+
+span {
+  display: inline;
+}
+
+.box {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+}
+
+
+.static {
+  position: static;
+}
+
+.relative {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+
+.absolute {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+div {
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+
+.hidden {
+  visibility: hidden;
+}
+
+.zbox {
+  position: absolute;
+  z-index: 2;
+}
+
+
+.box {
+  width: 300px;
+  padding: 25px;
+  border: 5px solid gray;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+
+
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+
+a:hover {
+  color: green;
+}
+
+li:first-child {
+  color: red;
+}
+
+
+p::first-line {
+  font-weight: bold;
+}
+
+p::before {
+  content: "Note: ";
+}
+
+
+input[type="text"] {
+  background-color: yellow;
+}
+
+a[target="_blank"] {
+  color: red;
+}
+
+
+div {
+  transition: background-color 0.5s ease;
+}
+
+div:hover {
+  background-color: lightgreen;
+}
+
+
+@keyframes move {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100px;
+  }
+}
+
+.animated {
+  position: relative;
+  animation: move 2s infinite alternate;
+}
+
+
+div {
+  transform: rotate(45deg);
+  transform: scale(1.5);
+}
+
+
+.box {
+  box-shadow: 10px 10px 5px grey;
+}
+
+.text {
+  text-shadow: 2px 2px 4px #000000;
+}
+
+
+:root {
+  --main-color: #06c;
+}
+
+div {
+  background-color: var(--main-color);
+}
+
+

@@ -1,0 +1,101 @@
+$primary-color: #3498db;
+$padding: 20px;
+
+.box {
+  background-color: $primary-color;
+  padding: $padding;
+}
+
+.nav {
+  background: #333;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 10px;
+        color: white;
+      }
+    }
+  }
+}
+
+// _buttons.scss
+.button {
+  padding: 10px 20px;
+  border: none;
+}
+
+// main.scss
+@import 'buttons';
+
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+.box {
+  @include border-radius(10px);
+}
+
+
+%message {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.success {
+  @extend %message;
+  color: green;
+}
+
+.error {
+  @extend %message;
+  color: red;
+}
+
+@function px-to-rem($px, $base: 16) {
+  @return #{$px / $base}rem;
+}
+
+body {
+  font-size: px-to-rem(18);
+}
+
+
+$theme: dark;
+
+body {
+  @if $theme == dark {
+    background: #111;
+    color: white;
+  } @else {
+    background: white;
+    color: black;
+  }
+}
+
+
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 100px * $i;
+  }
+}
+
+
+$colors: red, green, blue;
+
+@each $color in $colors {
+  .text-#{$color} {
+    color: $color;
+  }
+}
+
+

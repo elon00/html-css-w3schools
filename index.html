@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!-- 
+  File: basic_structure.html
+  W3Schools Style: HTML Basic Document
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+    <style>
+        body {font-family: sans-serif;}
+    </style>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+
+<p>My first paragraph.</p>
+<p>HTML is the standard markup language for creating Web pages.</p>
+
+</body>
+</html>
+```html
+<!DOCTYPE html>
+<!-- 
+  File: html_forms.html
+  W3Schools Style: HTML Forms
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+    <style>
+        body {font-family: sans-serif;}
+        div {margin-bottom: 10px;}
+        label {display: inline-block; width: 100px;}
+    </style>
+</head>
+<body>
+
+<h2>HTML Forms Example</h2>
+
+<form action="/action_page.php" method="get">
+  <div>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" value="John"><br>
+  </div>
+  <div>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" value="Doe"><br>
+  </div>
+
+  <div>
+    <p>Please select your gender:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male" style="width:auto;">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female" style="width:auto;">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other" style="width:auto;">Other</label>
+  </div>
+
+  <div>
+    <p>Choose your favorite subject(s):</p>
+    <input type="checkbox" id="subject1" name="subject1" value="Math">
+    <label for="subject1" style="width:auto;"> Math</label><br>
+    <input type="checkbox" id="subject2" name="subject2" value="Science">
+    <label for="subject2" style="width:auto;"> Science</label><br>
+    <input type="checkbox" id="subject3" name="subject3" value="History">
+    <label for="subject3" style="width:auto;"> History</label><br>
+  </div>
+  
+  <div>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50">
+Enter your message here...
+    </textarea>
+  </div>
+  
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset">
+</form> 
+
+<p><strong>Note:</strong> When you submit the form, the form-data will be sent to a page called "/action_page.php". Since this is a dummy page, it might result in an error if not set up on a server.</p>
+
+</body>
+</html>
+```html
+<!DOCTYPE html>
+<!-- 
+  File: html_graphics.html
+  W3Schools Style: HTML Images, Canvas, SVG
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Graphics</title>
+    <style>
+        body {font-family: sans-serif;}
+        canvas {border:1px solid #d3d3d3;}
+        svg {border:1px solid #d3d3d3;}
+    </style>
+</head>
+<body>
+
+<h2>HTML Images &lt;img&gt;</h2>
+<p>The &lt;img&gt; tag is used to embed an image in an HTML page.</p>
+<img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli in Italy" width="300" height="200">
+<img src="https://www.w3schools.com/html/img_girl.jpg" alt="Girl in a jacket" width="300" height="350" style="margin-left: 20px;">
+
+<h2>HTML Canvas &lt;canvas&gt;</h2>
+<p>The &lt;canvas&gt; element is used to draw graphics, on the fly, via JavaScript:</p>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+// Create a red rectangle
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(20, 20, 150, 75);
+</script>
+
+<h2>HTML SVG &lt;svg&gt;</h2>
+<p>SVG stands for Scalable Vector Graphics and is used to define graphics for the Web:</p>
+<svg width="100" height="100">
+   <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+   Sorry, your browser does not support inline SVG.
+</svg> 
+
+<svg width="200" height="100" style="margin-left:20px;">
+  <rect width="150" height="80" x="10" y="10" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+</body>
+</html>
+```html
+<!DOCTYPE html>
+<!-- 
+  File: html_media.html
+  W3Schools Style: HTML Audio and Video
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Media</title>
+    <style>
+        body {font-family: sans-serif;}
+        audio, video {margin-top: 10px; display: block;}
+    </style>
+</head>
+<body>
+
+<h2>HTML Audio &lt;audio&gt;</h2>
+<p>The &lt;audio&gt; element is used to play audio files:</p>
+<audio controls>
+  <source src="[https://www.w3schools.com/html/horse.ogg](https://www.w3schools.com/html/horse.ogg)" type="audio/ogg">
+  <source src="[https://www.w3schools.com/html/horse.mp3](https://www.w3schools.com/html/horse.mp3)" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<p><em>(The browser will choose the first source it supports)</em></p>
+
+<h2>HTML Video &lt;video&gt;</h2>
+<p>The &lt;video&gt; element is used to show videos:</p>
+<video width="320" height="240" controls>
+  <source src="[https://www.w3schools.com/html/mov_bbb.mp4](https://www.w3schools.com/html/mov_bbb.mp4)" type="video/mp4">
+  <source src="[https://www.w3schools.com/html/mov_bbb.ogg](https://www.w3schools.com/html/mov_bbb.ogg)" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+
+<h3>Video with Autoplay (muted) and Loop</h3>
+<video width="320" height="240" controls autoplay muted loop>
+  <source src="[https://www.w3schools.com/tags/movie.mp4](https://www.w3schools.com/tags/movie.mp4)" type="video/mp4">
+  <source src="[https://www.w3schools.com/tags/movie.ogg](https://www.w3schools.com/tags/movie.ogg)" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+<p><em>Note: Autoplay in modern browsers often requires the <code>muted</code> attribute.</em></p>
+
+</body>
+</html>
+```html
+<!DOCTYPE html>
+<!-- 
+  File: html_apis.html
+  W3Schools Style: HTML Web APIs (DOM, Geolocation, Web Storage, Fetch)
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Web APIs</title>
+    <style>
+        body {font-family: sans-serif;}
+        button {margin: 5px 0;}
+        #demo, #locationDemo, #storageDemo, #fetchDemo {
+            margin-top: 5px; 
+            padding: 5px; 
+            border: 1px solid #ccc; 
+            min-height: 20px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<h2>HTML DOM API Example</h2>
+<p>The DOM API allows JavaScript to access and change all the elements of an HTML document.</p>
+<p id="myText">Hello World!</p>
+<button onclick="changeText()">Change Text</button>
+<div id="demo"></div>
+
+<script>
+function changeText() {
+  document.getElementById("myText").innerHTML = "Text changed using DOM API!";
+  document.getElementById("demo").innerHTML = "The content of 'myText' was updated.";
+}
+</script>
+
+<hr>
+
+<h2>HTML Geolocation API Example</h2>
+<p>The Geolocation API is used to get the geographical position of a user.</p>
+<button onclick="getLocation()">Try It: Get Location</button>
+<div id="locationDemo">Click the button to get your coordinates. (Requires permission)</div>
+
+<script>
+var x = document.getElementById("locationDemo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    x.innerHTML = "Requesting location...";
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+</script>
+
+<hr>
+
+<h2>HTML Web Storage API (localStorage) Example</h2>
+<p>The Web Storage API allows web sites to store data locally within the user's browser.</p>
+<button onclick="saveData()">Save Data to Local Storage</button>
+<button onclick="loadData()">Load Data from Local Storage</button>
+<div id="storageDemo">Click buttons to save/load a sample item.</div>
+
+<script>
+function saveData() {
+  localStorage.setItem("mytime", Date.now());
+  document.getElementById("storageDemo").innerHTML = "Saved current timestamp to localStorage under key 'mytime'.";
+}
+
+function loadData() {
+  var item = localStorage.getItem("mytime");
+  if (item) {
+    document.getElementById("storageDemo").innerHTML = "Loaded from localStorage: mytime = " + item;
+  } else {
+    document.getElementById("storageDemo").innerHTML = "No data found in localStorage for key 'mytime'.";
+  }
+}
+</script>
+
+<hr>
+
+<h2>HTML Fetch API Example</h2>
+<p>The Fetch API provides an interface for fetching resources (including across the network).</p>
+<button onclick="fetchSampleData()">Fetch Sample Data</button>
+<div id="fetchDemo">Click button to fetch data.</div>
+
+<script>
+async function fetchSampleData() {
+  let demoDiv = document.getElementById("fetchDemo");
+  demoDiv.innerHTML = "Fetching data...";
+  try {
+    // Using JSONPlaceholder as a sample API (common in W3Schools examples)
+    let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    let data = await response.json();
+    demoDiv.innerHTML = "<strong>Fetched Todo Title:</strong> " + data.title + "<br>" +
+                        "<strong>Completed:</strong> " + data.completed;
+  } catch (error) {
+    demoDiv.innerHTML = "Error fetching data: " + error.message;
+    console.error('Fetch error:', error);
+  }
+}
+</script>
+
+</body>
+</html>
